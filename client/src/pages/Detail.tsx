@@ -12,6 +12,7 @@ export default function Detail() {
 
   return (
     <StyledMain>
+      <Title>{params.filename!.split(".")[0]}</Title>
       <ReactMarkdown
         children={markdown}
         remarkPlugins={[remarkGfm]}
@@ -38,9 +39,12 @@ export default function Detail() {
   );
 }
 
+const Title = styled.h1`
+  text-align: center;
+`;
+
 const StyledMain = styled.main`
   color: white;
-  padding: 3em 0;
   max-width: 90%;
   margin: auto;
 `;

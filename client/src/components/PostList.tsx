@@ -21,4 +21,8 @@ const PostWrap = styled.ul`
   flex-wrap: wrap;
   gap: 1em;
   margin: auto;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;

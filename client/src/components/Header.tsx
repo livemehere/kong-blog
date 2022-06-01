@@ -1,17 +1,31 @@
+import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Header() {
+  const location = useLocation();
+  const [searchBarShow, setSearchBarShow] = useState(true);
+
+  useEffect(() => {
+    if (/detail/.test(location.pathname)) {
+      setSearchBarShow(false);
+    } else {
+      setSearchBarShow(true);
+    }
+  }, [location]);
+
   return (
     <StyledHeader>
       <h1>
         <Link to={"/"}>Kong's Blog</Link>
       </h1>
-      <SerachBar>
-        <FiSearch color={"#E0E0E0"} />
-        <StyledInput type="text" />
-      </SerachBar>
+      {searchBarShow && (
+        <SerachBar>
+          <FiSearch color={"#E0E0E0"} />
+          <StyledInput type="text" />
+        </SerachBar>
+      )}
     </StyledHeader>
   );
 }
@@ -26,6 +40,13 @@ const StyledHeader = styled.header`
     font-size: 2em;
     font-weight: 700;
     color: #815cf0;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    & h1 {
+      text-align: center;
+    }
   }
 `;
 const SerachBar = styled.div`

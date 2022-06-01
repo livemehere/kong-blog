@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import json from "../markdown/list.json";
 
 export interface ListType {
   file: string;
@@ -8,7 +9,7 @@ export interface ListType {
 export default function useMarkdownList() {
   const [list, setList] = useState<ListType[]>([]);
   useEffect(() => {
-    const json = require("../markdown/list.json");
+    console.log(json);
     setList(json);
   }, []);
   return { list, setList };

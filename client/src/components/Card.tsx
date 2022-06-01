@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { ListType } from "../hooks/useMarkdownList";
 
@@ -7,10 +7,14 @@ interface Props {
 }
 
 export default function Card({ post }: Props) {
+  const navigate = useNavigate();
   return (
-    <CardWrap key={post.file}>
+    <CardWrap
+      key={post.file}
+      onTouchStart={() => navigate(`/detail/${post.file}`)}
+    >
       <Link to={`/detail/${post.file}`}>
-        <img src={`thumbnails/${post.thumbnail}`} alt="thumbnail" />
+        <img src={`/thumbnails/${post.thumbnail}`} alt="thumbnail" />
         <h2>{post.file}</h2>
       </Link>
     </CardWrap>
