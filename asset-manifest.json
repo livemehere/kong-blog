@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/kong-blog/client/static/js/main.fd606ff6.js",
+    "static/media/post2.md": "/kong-blog/client/static/media/post2.bb805c7f2993328e0502.md",
+    "index.html": "/kong-blog/client/index.html",
+    "static/media/post1.md": "/kong-blog/client/static/media/post1.359be6606f4bad77102c.md",
+    "main.fd606ff6.js.map": "/kong-blog/client/static/js/main.fd606ff6.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fd606ff6.js"
+  ]
+}
