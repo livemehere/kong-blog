@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/kong-blog/static/js/main.ef4ed0e3.js",
+    "main.js": "/kong-blog/static/js/main.d5caa1e2.js",
     "static/media/post2.md": "/kong-blog/static/media/post2.bb805c7f2993328e0502.md",
     "index.html": "/kong-blog/index.html",
     "static/media/post1.md": "/kong-blog/static/media/post1.359be6606f4bad77102c.md",
-    "main.ef4ed0e3.js.map": "/kong-blog/static/js/main.ef4ed0e3.js.map"
+    "main.d5caa1e2.js.map": "/kong-blog/static/js/main.d5caa1e2.js.map"
   },
   "entrypoints": [
-    "static/js/main.ef4ed0e3.js"
+    "static/js/main.d5caa1e2.js"
   ]
 }
