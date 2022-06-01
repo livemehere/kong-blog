@@ -18,6 +18,15 @@ const GlobalStyle = createGlobalStyle`
     padding-left: 3em;
     border-left: 0.5em #815cf0 solid;
   }
+
+  table,
+  tr,
+  td,
+  th {
+    border: 1px solid #555;
+    border-collapse: collapse;
+    padding: .5em 1em;
+  }
   
 `;
 

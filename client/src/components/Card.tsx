@@ -9,13 +9,10 @@ interface Props {
 export default function Card({ post }: Props) {
   const navigate = useNavigate();
   return (
-    <CardWrap
-      key={post.file}
-      onTouchStart={() => navigate(`/detail/${post.file}`)}
-    >
+    <CardWrap key={post.file}>
       <Link to={`/detail/${post.file}`}>
         <img src={`/thumbnails/${post.thumbnail}`} alt="thumbnail" />
-        <h2>{post.file}</h2>
+        <h2>{post.file!.split(".")[0]}</h2>
       </Link>
     </CardWrap>
   );
