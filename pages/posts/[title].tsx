@@ -39,7 +39,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (ctx) => {
-  const title = ctx.params.title;
+  const title = decodeURI(ctx.params.title);
   const post = getPostByFileName(title);
   if (!post) {
     return {
