@@ -5,7 +5,6 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import 'github-markdown-css';
-import qs from 'qs';
 
 interface Props {
   content: string;
