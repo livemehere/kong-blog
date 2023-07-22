@@ -52,7 +52,7 @@ export default SideMenu;
 export const Root = styled.aside`
   border-right: 1px solid var(--dark-light2);
   background: var(--dark-light);
-  padding: 12px;
+  padding: 24px 12px;
   transition: width 0.6s var(--easing);
   width: 48px;
   overflow: hidden;
