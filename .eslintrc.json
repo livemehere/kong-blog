@@ -8,6 +8,7 @@
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }] // @emotion/react 커스텀 프로퍼티
   }
 }
