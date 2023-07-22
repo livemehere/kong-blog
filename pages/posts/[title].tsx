@@ -6,6 +6,7 @@ import {
   getRecentPosts,
 } from '@src/server-functions/getCategoricalPosts';
 import PostDetail from '@src/components/post/PostDetail';
+import { css } from '@emotion/react';
 
 interface Props {
   post: Post;
@@ -14,6 +15,21 @@ interface Props {
 const PostDetailPage: FC<Props> = ({ post }) => {
   return (
     <Root className="PostDetailPage">
+      <div
+        className="detail-page-bg"
+        css={css`
+          background: url(${post.meta.thumbnailUrl}) no-repeat center/cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 10%;
+          z-index: -1;
+          opacity: 0.04;
+          filter: blur(10px);
+        `}
+      />
       <PostDetail post={post} />
     </Root>
   );

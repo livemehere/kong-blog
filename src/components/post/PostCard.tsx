@@ -44,8 +44,15 @@ export const Root = styled.article`
       justify-content: center;
       align-items: center;
       background: var(--dark-light2);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
       .thumbnail-placeholder {
-        background-color: var(--dark-light1);
         svg {
           path {
             fill: var(--gray);
