@@ -12,6 +12,7 @@ const Layout: FC<Props> = ({ children }) => {
     <Root className="Layout">
       <SideMenu />
       <div className={'container'}>
+        <div className="bg"></div>
         <Header />
         <main>{children}</main>
       </div>
@@ -25,9 +26,25 @@ export const Root = styled.div`
   height: 100%;
   display: flex;
   .container {
+    position: relative;
     width: 100%;
     height: 100%;
     flex: 1;
+
+    .bg {
+      user-select: none;
+      position: absolute;
+      object-fit: cover;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to top, var(--dark), var(--gray));
+      opacity: 0.04;
+    }
+
     main {
       max-width: 1032px;
       margin: auto;

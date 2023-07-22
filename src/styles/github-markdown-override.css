@@ -1,3 +1,6 @@
+.markdown-body{
+    background: transparent !important ;
+}
 .markdown-body pre{
     padding: 0 !important;
     background: transparent !important ;
