@@ -9,3 +9,15 @@
 - fetch : `react-query`, `react-query-devtools`, `axios`
 - svg : `svgr`
 - 에디터 : `eslint`, `prettier`
+
+## 마크다운 커스텀 렌더링 옵션
+
+### 이미지
+
+- 쿼리로 `width`, `height`, `align` 옵션을 줄 수 있습니다.
+- `align` 옵션은 기본이 `center`, `left(=start)`, `right(=end)` 입니다.
+- `width`, `height` 옵션은 기본은 '`unset`', `max-width` 는 `100%`.
+
+```md
+![Github_Logo](/svg/home.svg?width=300&height=300&align=end)
+```

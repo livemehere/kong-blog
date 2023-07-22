@@ -9,6 +9,8 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "warn",
-    "react/no-unknown-property": ["error", { "ignore": ["css"] }] // @emotion/react 커스텀 프로퍼티
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }], // @emotion/react 커스텀 프로퍼티
+    "@next/next/no-img-element": "off",
+    "react/prop-types": "off"
   }
 }

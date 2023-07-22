@@ -4,15 +4,20 @@ import Link from 'next/link';
 import HomeIcon from '@svg/home.svg';
 import ArticleIcon from '@svg/article.svg';
 import ResumeIcon from '@svg/resume.svg';
-import KongIcon from '@svg/kong-icon.svg';
+import KongIcon from '@svg/logo.svg';
+import TutorialIcon from '@svg/tutorial.svg';
 
 interface Props {}
 
 const menu = [
-  { category: 'home', href: '/', label: '홈', icon: <HomeIcon /> },
-  { category: 'post', href: '/post', label: '포스트', icon: <ArticleIcon /> },
+  { href: '/', label: '홈', icon: <HomeIcon /> },
+  { href: '/posts', label: '포스트', icon: <ArticleIcon /> },
   {
-    category: 'resume',
+    href: '/tutorial',
+    label: '튜토리얼',
+    icon: <TutorialIcon />,
+  },
+  {
     href: '/resume',
     label: '이력서',
     icon: <ResumeIcon />,
@@ -30,7 +35,7 @@ const SideMenu: FC<Props> = () => {
       </Link>
       <ul>
         {menu.map((item) => (
-          <li key={item.category}>
+          <li key={item.href}>
             <Link href={item.href}>
               <span className={'icon'}>{item.icon}</span>
               <span className={'label'}>{item.label}</span>
@@ -45,14 +50,15 @@ const SideMenu: FC<Props> = () => {
 export default SideMenu;
 
 export const Root = styled.aside`
-  border-right: 1px solid var(--border-color);
-  background: var(--light-black-color);
+  border-right: 1px solid var(--dark-light2);
+  background: var(--dark-light);
   padding: 12px;
   transition: width 0.6s var(--easing);
   width: 48px;
   overflow: hidden;
 
   /* 로고, 메뉴 공통 */
+
   a {
     display: flex;
     align-items: center;
@@ -60,11 +66,12 @@ export const Root = styled.aside`
     padding: 8px 12px;
     font-size: 14px;
     font-weight: 600;
-    color: var(--text-gray-color);
+    color: var(--gray);
     transition: all 0.2s ease-in-out;
 
     &.logo {
       margin-bottom: 20px;
+
       .label {
         font-weight: 700;
         font-size: 16px;
@@ -76,26 +83,31 @@ export const Root = styled.aside`
       svg {
         width: 24px;
         height: 24px;
+
         path {
           transition: all 0.2s ease-in-out;
         }
       }
     }
+
     .label {
       display: none;
       white-space: nowrap;
     }
+
     &:hover:not(.logo) {
-      color: hsl(222deg 14% 90% / 75%);
+      color: var(--white);
+
       .icon {
         svg path {
-          fill: hsl(222deg 14% 90% / 75%);
+          fill: var(--white);
         }
       }
     }
   }
 
   /* 메뉴 */
+
   ul {
     display: flex;
     flex-direction: column;
@@ -104,6 +116,7 @@ export const Root = styled.aside`
 
   &:hover {
     width: 239px;
+
     a {
       .label {
         display: inline-block;

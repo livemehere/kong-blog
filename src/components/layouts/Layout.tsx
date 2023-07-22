@@ -25,7 +25,13 @@ export const Root = styled.div`
   height: 100%;
   display: flex;
   .container {
+    width: 100%;
     height: 100%;
     flex: 1;
+    main {
+      max-width: 1032px;
+      margin: auto;
+      padding: 0 16px;
+    }
   }
 `;
