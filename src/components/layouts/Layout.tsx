@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useState } from 'react';
 import Header from '@src/components/layouts/Header';
 import SideMenu from '@src/components/layouts/SideMenu';
 
@@ -8,12 +8,13 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ children }) => {
+  const [sideMenuOpen, setSideMenuOpen] = useState(false);
   return (
     <Root className="Layout">
-      <SideMenu />
+      <SideMenu sideMenuOpen={sideMenuOpen} setSideMenuOpen={setSideMenuOpen} />
       <div className={'container'}>
         <div className="bg"></div>
-        <Header />
+        <Header setSideMenuOpen={setSideMenuOpen} />
         <main>{children}</main>
       </div>
     </Root>

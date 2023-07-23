@@ -3,7 +3,11 @@ import { FC } from 'react';
 import GithubIcon from '@svg/github.svg';
 import YoutubeIcon from '@svg/youtube.svg';
 import { css } from '@emotion/react';
-interface Props {}
+import HambergerIcon from '@svg/hamberger.svg';
+
+interface Props {
+  setSideMenuOpen: (open: boolean) => void;
+}
 
 const headerLinks = [
   {
@@ -26,9 +30,15 @@ const headerLinks = [
   },
 ];
 
-const Header: FC<Props> = () => {
+const Header: FC<Props> = ({ setSideMenuOpen }) => {
   return (
     <Root className="Header">
+      <button
+        className={'mobile-menu-btn'}
+        onClick={() => setSideMenuOpen(true)}
+      >
+        <HambergerIcon />
+      </button>
       <ul>
         {headerLinks.map((item) => (
           <li key={item.href}>
@@ -63,6 +73,14 @@ export const Root = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  .mobile-menu-btn {
+    margin-right: auto;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 
   ul {
     display: flex;

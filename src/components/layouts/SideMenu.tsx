@@ -6,8 +6,13 @@ import ArticleIcon from '@svg/article.svg';
 import ResumeIcon from '@svg/resume.svg';
 import KongIcon from '@svg/logo.svg';
 import TutorialIcon from '@svg/tutorial.svg';
+import { css } from '@emotion/react';
+import useClickOutside from '@src/hooks/useClickOutside';
 
-interface Props {}
+interface Props {
+  sideMenuOpen: boolean;
+  setSideMenuOpen: (open: boolean) => void;
+}
 
 const menu = [
   { href: '/', label: '홈', icon: <HomeIcon /> },
@@ -24,9 +29,35 @@ const menu = [
   },
 ];
 
-const SideMenu: FC<Props> = () => {
+const SideMenu: FC<Props> = ({ sideMenuOpen, setSideMenuOpen }) => {
+  const ref = useClickOutside(() => {
+    setSideMenuOpen(false);
+  });
   return (
-    <Root className="SideMenu">
+    <Root
+      ref={ref}
+      className="SideMenu"
+      css={css`
+        @media (width< 1232px) {
+          width: 239px;
+          transform: translateX(-100%);
+          transition: transform 0.6s var(--easing);
+
+          a {
+            .label {
+              display: inline-block;
+            }
+          }
+        }
+
+        ${sideMenuOpen &&
+        css`
+          @media (width< 1232px) {
+            transform: translateX(0%);
+          }
+        `}
+      `}
+    >
       <Link href={'/'} className={'logo'}>
         <span className="icon">
           <KongIcon />
@@ -60,7 +91,6 @@ export const Root = styled.aside`
   z-index: 1;
 
   /* 로고, 메뉴 공통 */
-
   a {
     display: flex;
     align-items: center;
@@ -107,15 +137,12 @@ export const Root = styled.aside`
       }
     }
   }
-
   /* 메뉴 */
-
   ul {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
-
   &:hover {
     width: 239px;
 
