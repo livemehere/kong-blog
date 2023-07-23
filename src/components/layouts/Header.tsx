@@ -3,7 +3,7 @@ import { FC } from 'react';
 import GithubIcon from '@svg/github.svg';
 import YoutubeIcon from '@svg/youtube.svg';
 import { css } from '@emotion/react';
-import HambergerIcon from '@svg/hamberger.svg';
+import HamburgerIcon from '@svg/hamburger.svg';
 
 interface Props {
   setSideMenuOpen: (open: boolean) => void;
@@ -37,7 +37,7 @@ const Header: FC<Props> = ({ setSideMenuOpen }) => {
         className={'mobile-menu-btn'}
         onClick={() => setSideMenuOpen(true)}
       >
-        <HambergerIcon />
+        <HamburgerIcon />
       </button>
       <ul>
         {headerLinks.map((item) => (
