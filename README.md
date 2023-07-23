@@ -12,6 +12,26 @@
 
 ## 마크다운 커스텀 렌더링 옵션
 
+### 템플릿 예시
+
+- `category` 와 `tags`, `thumbnailUrl` 을 메타정보로 입력할 수 있습니다.
+- 생성일,수정일은 파일자체의 메타 데이터를 사용합니다.
+- category : string (default : '지정되지 않음')
+- tags : string[] (default : [])
+- thumbnailUrl : public 경로 (default : undefined) 설정하지 않으면 로고로 생성됩니다.
+
+```md
+---
+category: 'hello'
+tags: ['blog','test']
+thumbnailUrl: '/images/thumbnail.png'
+---
+
+# hello
+
+## hello
+```
+
 ### 이미지
 
 - 쿼리로 `width`, `height`, `align` 옵션을 줄 수 있습니다.
