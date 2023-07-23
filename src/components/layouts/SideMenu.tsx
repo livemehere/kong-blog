@@ -5,7 +5,7 @@ import HomeIcon from '@svg/home.svg';
 import ArticleIcon from '@svg/article.svg';
 import ResumeIcon from '@svg/resume.svg';
 import KongIcon from '@svg/logo.svg';
-import TutorialIcon from '@svg/tutorial.svg';
+import ToolIcon from '@svg/tool.svg';
 import { css } from '@emotion/react';
 import useClickOutside from '@src/hooks/useClickOutside';
 
@@ -18,9 +18,9 @@ const menu = [
   { href: '/', label: '홈', icon: <HomeIcon /> },
   { href: '/posts', label: '포스트', icon: <ArticleIcon /> },
   {
-    href: '/tutorial',
-    label: '튜토리얼',
-    icon: <TutorialIcon />,
+    href: '/tools',
+    label: '툴',
+    icon: <ToolIcon />,
   },
   {
     href: '/resume',
@@ -141,7 +141,7 @@ export const Root = styled.aside`
   ul {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
   }
   &:hover {
     width: 239px;
