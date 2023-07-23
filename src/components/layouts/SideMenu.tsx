@@ -42,6 +42,7 @@ const SideMenu: FC<Props> = ({ sideMenuOpen, setSideMenuOpen }) => {
           width: 239px;
           transform: translateX(-100%);
           transition: transform 0.6s var(--easing);
+          z-index: 3;
 
           a {
             .label {
@@ -58,7 +59,11 @@ const SideMenu: FC<Props> = ({ sideMenuOpen, setSideMenuOpen }) => {
         `}
       `}
     >
-      <Link href={'/'} className={'logo'}>
+      <Link
+        href={'/'}
+        className={'logo'}
+        onClickCapture={() => setSideMenuOpen(false)}
+      >
         <span className="icon">
           <KongIcon />
         </span>
@@ -67,7 +72,10 @@ const SideMenu: FC<Props> = ({ sideMenuOpen, setSideMenuOpen }) => {
       <ul>
         {menu.map((item) => (
           <li key={item.href}>
-            <Link href={item.href}>
+            <Link
+              href={item.href}
+              onClickCapture={() => setSideMenuOpen(false)}
+            >
               <span className={'icon'}>{item.icon}</span>
               <span className={'label'}>{item.label}</span>
             </Link>
