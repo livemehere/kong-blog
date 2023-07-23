@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build-sitemap": "node scripts/generateSitemap.mjs"
+    "build-sitemap": "node scripts/generateSitemap.mjs",
+    "prebuild": "npm run build-sitemap"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -21,6 +22,7 @@
     "globby": "^13.2.2",
     "immer": "^10.0.2",
     "next": "^13.4.10",
+    "next-seo": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.7",

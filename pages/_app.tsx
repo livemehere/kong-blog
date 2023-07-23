@@ -6,6 +6,9 @@ import { QueryClient } from '@tanstack/query-core';
 import { Hydrate, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Layout from '@src/components/layouts/Layout';
+import { DefaultSeo } from 'next-seo';
+import { DOMAIN } from '@src/config';
+import defaultSeoConfig from '../next-seo.config';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
@@ -21,10 +24,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         },
       })
   );
-
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
+        <DefaultSeo {...defaultSeoConfig} />
         <Layout>
           <Component {...pageProps} />
         </Layout>

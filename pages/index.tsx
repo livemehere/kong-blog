@@ -15,10 +15,6 @@ interface Props {
 export default function IndexPage({ posts }: Props) {
   return (
     <>
-      <Head>
-        {/* Default SEO 는 _app 에서 설정해주세요 */}
-        <title>홈 페이지</title>
-      </Head>
       <Root>
         <Search />
         <PostList

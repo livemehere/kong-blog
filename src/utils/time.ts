@@ -8,4 +8,3 @@ dayjs.extend(timezone);
 export function dateFormat(date: string, format = 'YYYY-MM-DD HH:mm') {
   return dayjs(date).tz('Asia/Seoul').format(format);
 }
-ㅇ

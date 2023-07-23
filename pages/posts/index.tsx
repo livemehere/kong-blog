@@ -10,6 +10,7 @@ import { groupByCategory } from '@src/utils/post';
 import PostPageHeader from '@src/components/post/PostPageHeader';
 import useScroll from '@src/hooks/useScroll';
 import cn from 'simple-class-names';
+import { NextSeo } from 'next-seo';
 
 interface Props {
   posts: Post[];
@@ -32,25 +33,28 @@ const PostsPage: FC<Props> = ({ posts }) => {
   const showBlurBg = y > 65.5;
 
   return (
-    <Root className="PostsPage">
-      <div className={cn('filter-bg', { showBlurBg })} />
-      <PostPageHeader
-        categories={categories}
-        onClick={handleSetCategory}
-        currentCategory={currentCategory}
-      />
-      <section>
-        {Object.entries(filteredPosts).map(([category, posts]) => (
-          <PostList
-            key={category}
-            posts={posts}
-            title={category}
-            description={`${category} 카테고리의 게시물 목록이에요.`}
-            n={10}
-          />
-        ))}
-      </section>
-    </Root>
+    <>
+      <NextSeo title={'게시글 목록'} />
+      <Root className="PostsPage">
+        <div className={cn('filter-bg', { showBlurBg })} />
+        <PostPageHeader
+          categories={categories}
+          onClick={handleSetCategory}
+          currentCategory={currentCategory}
+        />
+        <section>
+          {Object.entries(filteredPosts).map(([category, posts]) => (
+            <PostList
+              key={category}
+              posts={posts}
+              title={category}
+              description={`${category} 카테고리의 게시물 목록이에요.`}
+              n={10}
+            />
+          ))}
+        </section>
+      </Root>
+    </>
   );
 };
 
