@@ -58,7 +58,7 @@ function _parseMarkdown(filename: string): Post {
   const matterData = matter(fileContents);
   return {
     meta: {
-      category: matterData.data.category,
+      category: matterData.data.category ?? '지정되지 않음',
       tags: matterData.data.tags ?? [],
       thumbnailUrl: matterData.data.thumbnailUrl,
       title: path.basename(filename).replace('.md', ''),

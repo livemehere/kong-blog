@@ -7,9 +7,11 @@ import PostCard from '@src/components/post/PostCard';
 interface Props {
   posts: Post[];
   n?: number;
+  title: string;
+  description: string;
 }
 
-const PostList: FC<Props> = ({ posts, n }) => {
+const PostList: FC<Props> = ({ title, description, posts, n }) => {
   const displayPosts = useMemo(
     () => (n ? posts.slice(0, n) : posts),
     [posts, n]
@@ -17,10 +19,7 @@ const PostList: FC<Props> = ({ posts, n }) => {
 
   return (
     <Root className="PostList">
-      <Title
-        title={'최근 포스트'}
-        description={'최근 게시된 게시물 목록이에요.'}
-      />
+      <Title title={title} description={description} />
       <section>
         <ul>
           {displayPosts.map((post) => (

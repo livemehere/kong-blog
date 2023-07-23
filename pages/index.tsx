@@ -21,7 +21,11 @@ export default function IndexPage({ posts }: Props) {
       </Head>
       <Root>
         <Search />
-        <PostList posts={posts} />
+        <PostList
+          posts={posts}
+          title={'최신 포스트'}
+          description={'최근 게시된 게시물 목록이에요.'}
+        />
       </Root>
     </>
   );

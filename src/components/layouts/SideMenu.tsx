@@ -50,12 +50,14 @@ const SideMenu: FC<Props> = () => {
 export default SideMenu;
 
 export const Root = styled.aside`
+  position: fixed;
   border-right: 1px solid var(--dark-light2);
   background: var(--dark-light);
   padding: 24px 12px;
   transition: width 0.6s var(--easing);
-  width: 48px;
-  overflow: hidden;
+  width: 48px; // 이걸 줘야 트렌지션이 먹는다.
+  height: 100%;
+  z-index: 1;
 
   /* 로고, 메뉴 공통 */
 
