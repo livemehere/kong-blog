@@ -96,7 +96,7 @@ export const Root = styled.aside`
   transition: width 0.6s var(--easing);
   width: 48px; // 이걸 줘야 트렌지션이 먹는다.
   height: 100%;
-  z-index: 1;
+  z-index: 10;
 
   /* 로고, 메뉴 공통 */
   a {
