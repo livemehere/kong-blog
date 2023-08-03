@@ -5,6 +5,8 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import 'github-markdown-css';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 
 interface Props {
   content: string;
@@ -15,6 +17,16 @@ const Markdown: FC<Props> = ({ content }) => {
     <ReactMarkdown
       className="markdown-body"
       remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
+      rehypePlugins={[
+        rehypeRaw,
+        rehypeSanitize({
+          ...defaultSchema.attributes,
+          attributes: {
+            ...defaultSchema.attributes,
+            iframe: [...(defaultSchema.attributes.iframe || [])],
+          },
+        }) as any,
+      ]}
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '');
