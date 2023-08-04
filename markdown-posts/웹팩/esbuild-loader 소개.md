@@ -1,5 +1,5 @@
 ---
-category: 'webpack 시리즈'
+category: 'webpack'
 tags: ['webpack', 'esbuild', 'loader','번들러']
 ---
 
