@@ -18,17 +18,25 @@ export default function IndexPage({ posts }: Props) {
         <div className={'search-wrapper'}>
           <Search />
         </div>
-        <PostList
-          posts={posts}
-          title={'최신 포스트'}
-          description={'최근 게시된 게시물 목록이에요.'}
-        />
+        <section>
+          <PostList
+            posts={posts}
+            title={'최신 포스트'}
+            description={'최근 게시된 게시물 목록이에요.'}
+          />
+        </section>
       </Root>
     </>
   );
 }
 
 const Root = styled.div`
+  .search-wrapper {
+    padding: 0 var(--main-padding);
+  }
+  > section {
+    padding: 0 var(--main-padding);
+  }
   .PostList {
     margin: 80px auto;
     width: 100%;
