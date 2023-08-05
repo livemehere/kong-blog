@@ -20,6 +20,9 @@
     --main-width: 1032px;
     --main-padding: 16px;
 
+    /* break point */
+    --mobile-width: 1232px;
+
 }
 
 html,body,#__next{

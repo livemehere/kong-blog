@@ -69,7 +69,7 @@ export default Header;
 
 export const Root = styled.div`
   height: 64px;
-  padding: 0 16px;
+  padding: 0 var(--main-padding);
   display: flex;
   align-items: center;
   justify-content: flex-end;

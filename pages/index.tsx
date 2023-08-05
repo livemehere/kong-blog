@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Search from '@src/components/Search';
 import PostList from '@src/components/post/PostList';
 import styled from '@emotion/styled';
@@ -31,7 +30,9 @@ export default function IndexPage({ posts }: Props) {
 
 const Root = styled.div`
   .PostList {
-    margin-top: 80px;
+    margin: 80px auto;
+    width: 100%;
+    max-width: var(--main-width);
   }
 `;
 

@@ -30,6 +30,11 @@ export const Root = styled.div`
     position: relative;
     width: 100%;
     flex: 1;
+    padding-left: 73px;
+
+    @media (max-width: 1232px) {
+      padding-left: 0;
+    }
 
     .bg {
       user-select: none;

@@ -10,7 +10,7 @@ esbuild 는 Go 로 만들어진 자바스크립트 번들러입니다.
 Go 가 언어적 특성상 빠른 속도를 자랑하는데, 그로인하여 Go 로 만들어지는 빌드 툴이 속속 생기고있고, esbuild 는 그중 하나입니다.   
 
 esbuild 는 ECMA 문법, typescript 컴파일, js minify 등을 지원합니다.   
-babel, tsc, terser 등을 대체할 수 있습니다. with 빠른속도.   
+babel, tsc, terser 등을 대체할 수 있습니다.(with 빠른속도)    
 웹팩을 사용할 때에는 `babel-loader`, `ts-loader` 를 `esbuild-loader` 로 대체할 수 있습니다. minify 플러그인도 들어있구요.   
 
 https://github.com/esbuild-kit/esbuild-loader/discussions/138   

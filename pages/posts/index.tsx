@@ -36,12 +36,14 @@ const PostsPage: FC<Props> = ({ posts }) => {
     <>
       <NextSeo title={'게시글 목록'} />
       <Root className="PostsPage">
-        <div className={cn('filter-bg', { showBlurBg })} />
-        <PostPageHeader
-          categories={categories}
-          onClick={handleSetCategory}
-          currentCategory={currentCategory}
-        />
+        <div className="post-header-wrapper">
+          <div className={cn('filter-bg', { showBlurBg })} />
+          <PostPageHeader
+            categories={categories}
+            onClick={handleSetCategory}
+            currentCategory={currentCategory}
+          />
+        </div>
         <section>
           {Object.entries(filteredPosts).map(([category, posts]) => (
             <PostList
@@ -67,28 +69,43 @@ export const Root = styled.div`
   position: relative;
   padding-bottom: 100px;
 
+  .post-header-wrapper {
+    --min-height: 140px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(20px);
+    z-index: 2;
+    min-height: var(--min-height);
+
+    .filter-bg::after {
+      content: '';
+      will-change: height;
+      transition: all 0.2s var(--easing);
+      height: 0;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      background: hsl(222deg 20% 7% / 75%);
+      z-index: -1;
+    }
+
+    .filter-bg.showBlurBg::after {
+      opacity: 0.5;
+      height: 100%;
+    }
+  }
+
   > section {
     display: flex;
     flex-direction: column;
     gap: 100px;
-  }
 
-  .filter-bg::after {
-    content: '';
-    will-change: height;
-    transition: all 0.2s var(--easing);
-    height: 0;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    background: hsl(222deg 20% 7% / 75%);
-  }
-
-  .filter-bg.showBlurBg::after {
-    opacity: 0.5;
-    height: 140px;
+    width: 100%;
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding: 0 var(--main-padding);
   }
 `;
 

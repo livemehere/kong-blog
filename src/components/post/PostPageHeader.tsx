@@ -35,10 +35,16 @@ const PostPageHeader: FC<Props> = ({
 export default PostPageHeader;
 
 export const Root = styled.div`
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(20px);
-  z-index: 2;
+  max-width: var(--main-width);
+  margin: 0 auto;
+  min-height: var(--min-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (width < 1232px) {
+    padding: 0 var(--main-padding);
+  }
 
   h2 {
     font-size: 1.5rem;
