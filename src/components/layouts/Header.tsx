@@ -75,10 +75,14 @@ export const Root = styled.div`
   justify-content: flex-end;
 
   .mobile-menu-btn {
+    display: none;
     margin-right: auto;
     svg {
       width: 24px;
       height: 24px;
+    }
+    @media (width < 1232px) {
+      display: block;
     }
   }
 

@@ -30,6 +30,10 @@ export const Root = styled.div`
     position: relative;
     width: 100%;
     flex: 1;
+    padding-left: 74px;
+    @media (width < 1232px) {
+      padding-left: 0;
+    }
 
     .bg {
       user-select: none;
@@ -43,12 +47,6 @@ export const Root = styled.div`
       height: 50%;
       background: linear-gradient(to top, var(--dark), var(--gray));
       opacity: 0.04;
-    }
-
-    main {
-      max-width: 1032px;
-      margin: auto;
-      padding: 0 16px;
     }
   }
 `;

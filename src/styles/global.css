@@ -16,6 +16,10 @@
     /* easing */
     --easing:cubic-bezier(0.16, 1, 0.3, 1);
 
+    /* size */
+    --main-width: 1032px;
+    --main-padding: 0 16px;
+
 }
 
 html,body,#__next{

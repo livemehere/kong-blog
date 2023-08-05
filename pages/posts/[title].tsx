@@ -44,7 +44,9 @@ const PostDetailPage: FC<Props> = ({ post }) => {
 export default PostDetailPage;
 
 export const Root = styled.div`
-  margin-top: 60px;
+  padding: var(--main-padding);
+  max-width: var(--main-width);
+  margin: 60px auto;
 `;
 
 export const getStaticPaths = async () => {

@@ -71,6 +71,12 @@ export const Root = styled.div`
     display: flex;
     flex-direction: column;
     gap: 100px;
+    width: var(--main-width);
+    padding: var(--main-padding);
+    margin: auto;
+    @media (width < 1232px) {
+      width: 100%;
+    }
   }
 
   .filter-bg::after {
