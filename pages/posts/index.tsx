@@ -102,7 +102,7 @@ export const Root = styled.div`
     flex-direction: column;
     gap: 100px;
 
-    width: 94%;
+    width: calc(100% - var(--main-padding) * 2);
     max-width: var(--main-width);
     margin: 0 auto;
     padding: 0 var(--main-padding);
