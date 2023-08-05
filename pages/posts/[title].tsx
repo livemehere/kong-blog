@@ -44,7 +44,7 @@ const PostDetailPage: FC<Props> = ({ post }) => {
 export default PostDetailPage;
 
 export const Root = styled.div`
-  padding: var(--main-padding);
+  padding: 0 var(--main-padding);
   max-width: var(--main-width);
   margin: 60px auto;
 `;

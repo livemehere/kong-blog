@@ -30,10 +30,6 @@ export default function IndexPage({ posts }: Props) {
 }
 
 const Root = styled.div`
-  max-width: var(--main-width);
-  margin: 0 auto;
-  padding: var(--main-padding);
-
   .PostList {
     margin-top: 80px;
   }

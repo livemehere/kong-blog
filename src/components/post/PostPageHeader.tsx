@@ -39,11 +39,6 @@ export const Root = styled.div`
   top: 0;
   backdrop-filter: blur(20px);
   z-index: 2;
-  padding: 24px 168px;
-
-  @media (width < 1232px) {
-    padding: 24px 16px;
-  }
 
   h2 {
     font-size: 1.5rem;
