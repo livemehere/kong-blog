@@ -1,6 +1,7 @@
 ---
 category: 'webpack'
 tags: ['webpack', 'esbuild', 'loader','번들러']
+thumbnailUrl: '/thumbnail/webpack-thumb.png'
 ---
 
 ## esbuild 
