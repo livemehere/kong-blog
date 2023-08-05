@@ -30,6 +30,7 @@ const PostDetailPage: FC<Props> = ({ post }) => {
             right: 0;
             width: 100%;
             height: 10%;
+            min-height: 500px;
             z-index: -1;
             opacity: 0.04;
             filter: blur(10px);
