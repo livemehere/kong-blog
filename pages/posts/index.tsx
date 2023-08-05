@@ -93,7 +93,7 @@ export const Root = styled.div`
 
     .filter-bg.showBlurBg::after {
       opacity: 0.5;
-      height: 100%;
+      height: var(--min-height);
     }
   }
 
@@ -102,7 +102,7 @@ export const Root = styled.div`
     flex-direction: column;
     gap: 100px;
 
-    width: 100%;
+    width: 94%;
     max-width: var(--main-width);
     margin: 0 auto;
     padding: 0 var(--main-padding);
