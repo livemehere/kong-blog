@@ -70,12 +70,10 @@ export const Root = styled.div`
   padding-bottom: 100px;
 
   .post-header-wrapper {
-    --min-height: 140px;
     position: sticky;
     top: 0;
     backdrop-filter: blur(20px);
     z-index: 2;
-    min-height: var(--min-height);
 
     .filter-bg::after {
       content: '';

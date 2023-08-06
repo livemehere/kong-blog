@@ -37,14 +37,11 @@ export default PostPageHeader;
 export const Root = styled.div`
   max-width: var(--main-width);
   margin: 0 auto;
-  min-height: var(--min-height);
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @media (width < 1232px) {
-    padding: 0 var(--main-padding);
-  }
+  padding: 0 var(--main-padding);
 
   h2 {
     font-size: 1.5rem;
