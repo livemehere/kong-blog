@@ -8,6 +8,7 @@ import {
 import PostDetail from '@src/components/post/PostDetail';
 import { css } from '@emotion/react';
 import { NextSeo } from 'next-seo';
+import ScrollStatus from '@src/components/post/ScrollStatus';
 
 interface Props {
   post: Post;
@@ -20,6 +21,7 @@ const PostDetailPage: FC<Props> = ({ post }) => {
     <>
       <NextSeo title={title} description={desc} />
       <Root className="PostDetailPage">
+        <ScrollStatus />
         <div
           className="detail-page-bg"
           css={css`
