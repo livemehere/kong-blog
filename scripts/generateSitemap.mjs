@@ -58,13 +58,12 @@ async function _getDynamicUrlMap(pattern) {
   const base = `${domain}${dynamicPaths[0].replace('pages', '').replace('.tsx', '').replace('[title]', '')}`;
   return `
     ${markdownPaths.map(path=>{
-    const url = path
-      .replace('markdown-posts/', '')
-      .replace('.md', '')
-    console.log(`${base}${encodeURI(url)}(${url}) is generated!`);
+    const filename = path.match(/\/[^/]+\.md/g)[0];
+    const title = filename.slice(1, -3);
+    console.log(`${base}${encodeURI(title)}(${title}) is generated!`);
     return `
             <url>
-              <loc>${`${base}${encodeURI(url)}`}</loc>
+              <loc>${`${base}${encodeURI(title)}`}</loc>
               <lastmod>${currentDate}</lastmod>
               <priority>1.00</priority>
             </url>`
