@@ -62,8 +62,8 @@ function _parseMarkdown(filename: string): Post {
       tags: matterData.data.tags ?? [],
       thumbnailUrl: matterData.data.thumbnailUrl,
       title: path.basename(filename).replace('.md', ''),
-      createdAt: stat.birthtime.toString(),
-      updatedAt: stat.mtime.toString(),
+      createdAt: matterData.data.createdAt,
+      updatedAt: matterData.data.updatedAt,
     },
     content: matterData.content,
   };

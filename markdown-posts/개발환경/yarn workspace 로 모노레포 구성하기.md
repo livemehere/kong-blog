@@ -2,6 +2,7 @@
 category: '개발환경'
 tags: ['yarn','monorepo','workspace']
 thumbnailUrl: '/thumbnail/yarn.png'
+createdAt: '2023-08-12 10:48'
 ---
 
 ## yarn workspace
