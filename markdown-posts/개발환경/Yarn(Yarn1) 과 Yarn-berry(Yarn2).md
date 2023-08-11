@@ -75,15 +75,6 @@ yarn init -2 # 반드시 -2 옵션을 붙여야합니다.
 yarn add [package] # yarn add -D [package] -> devDependencies
 ```
 
-### 4. run
-
-> 그냥 node 가 아닌 yarn node 로 실행해야합니다.
-> ❗️ 단 webpack, babel, typescript 등 을 통해 번들된 결과물이라면 일반 js 이기 때문에 node 로 실행합니다.
-
-```bash
-yarn node [file]
-```
-
 ### + .yarnrc.yml
 
 자동으로 생성되는 이 config 파일에서 이것저것 설정해 줄 수 있는데, 대표적으로 하나의 예시만 소개하겠습니다.   
