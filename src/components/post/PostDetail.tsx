@@ -18,7 +18,7 @@ const PostDetail: FC<Props> = ({ post }) => {
         <h1>{post.meta.title}</h1>
         <p className={'createdAt'}>
           <WriteIcon />
-          {dateFormat(post.meta.createdAt)}
+          {dateFormat(post.meta.createdAt)} 작성됨
         </p>
         <div className="tags">
           <TagIcon />

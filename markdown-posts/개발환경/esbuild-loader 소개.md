@@ -1,5 +1,5 @@
 ---
-category: 'webpack'
+category: '개발환경'
 tags: ['webpack', 'esbuild', 'loader','번들러']
 thumbnailUrl: '/thumbnail/webpack-thumb.png'
 ---
