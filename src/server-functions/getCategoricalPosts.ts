@@ -17,16 +17,15 @@ export interface Post {
 export function getRecentPosts(): Post[] {
   const result: Post[] = [];
   const files = _getFiles(path.join(process.cwd(), 'markdown-posts'));
-  const sortedFiles = files.sort((a, b) => {
-    const statA = fs.statSync(a);
-    const statB = fs.statSync(b);
-    return statB.birthtimeMs - statA.birthtimeMs;
-  });
-  for (const file of sortedFiles) {
+  for (const file of files) {
     const post = _parseMarkdown(file);
     result.push(post);
   }
-  return result;
+  return result.sort((a, b) => {
+    return (
+      new Date(b.meta.createdAt).getTime() - new Date(a.meta.createdAt).getTime()
+    );
+  });
 }
 
 export function getPostByFileName(filename: string): Post | undefined {
