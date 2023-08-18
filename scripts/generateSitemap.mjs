@@ -44,7 +44,6 @@ async function _getStaticUrlMap() {
       .replace('pages', '')
       .replace('.tsx', '')
       .replace('/index', '')
-    console.log(`${domain}${url} is generated!`);
     return `
             <url>
               <loc>${`${domain}${url}`}</loc>
@@ -60,10 +59,10 @@ async function _getDynamicUrlMap(pattern) {
     ${markdownPaths.map(path=>{
     const filename = path.match(/\/[^/]+\.md/g)[0];
     const title = filename.slice(1, -3);
-    console.log(`${base}${encodeURI(title)}(${title}) is generated!`);
+    console.log(`${base}${title}(${title}) is generated!`);
     return `
             <url>
-              <loc>${`${base}${encodeURI(title)}`}</loc>
+              <loc>${`${base}${title}`}</loc>
               <lastmod>${currentDate}</lastmod>
               <priority>1.00</priority>
             </url>`
