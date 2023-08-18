@@ -60,3 +60,9 @@ RN 으로패키지를 추가하면 항상 ios 는 pod install 을해서 sync 를
 스택 구조만 일단 다 잡아두었다
 
 <img src="/rn-post1/device.png">
+
+## 일러스트레이터로 만든 로고
+
+피트니스는 기울이기만해도 정체성이 드러나는 겉다 뭐지..? ㅋㅋㅋㅋ
+
+<img src="/rn-post1/logo.png">
