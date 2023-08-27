@@ -3,6 +3,7 @@ category: '앱'
 tags: ['앱','React Native','실천의 힘']
 thumbnailUrl: '/thumbnail/rn.png'
 createdAt: '2023-08-18 20:16'
+private: true
 ---
 
 ## 빨리 출시해보자

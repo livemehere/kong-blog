@@ -10,6 +10,7 @@ export interface Post {
     category?: string;
     tags: string[];
     thumbnailUrl?: string;
+    private?: boolean;
   };
   content: string;
 }
@@ -19,6 +20,7 @@ export function getRecentPosts(): Post[] {
   const files = _getFiles(path.join(process.cwd(), 'markdown-posts'));
   for (const file of files) {
     const post = _parseMarkdown(file);
+    if(post.meta.private) continue;
     result.push(post);
   }
   return result.sort((a, b) => {
@@ -63,6 +65,7 @@ function _parseMarkdown(filename: string): Post {
       title: path.basename(filename).replace('.md', ''),
       createdAt: matterData.data.createdAt,
       updatedAt: matterData.data.updatedAt,
+      private: matterData.data.private,
     },
     content: matterData.content,
   };
