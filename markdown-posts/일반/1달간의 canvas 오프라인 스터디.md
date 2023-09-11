@@ -2,7 +2,7 @@
 category: '일반'
 tags: ['오프라인 스터디','canvas']
 thumbnailUrl: '/thumbnail/tada.png'
-createdAt: '2021-09-11 00:20'
+createdAt: '2023-09-11 00:20'
 ---
 
 ## 4주간의 오프라인 스터디 끝!
